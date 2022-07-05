@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <math.h>
+//int HanoiCnt(int);
 void Hanoi(int, int, int, int);
 int main(void)
 {
@@ -9,6 +10,20 @@ int main(void)
     Hanoi(n, 1, 3, 2);
     return 0;
 }
+/*
+int HanoiCnt(int n)        //아래 Hanoi 함수를 참고해 최소 이동 횟수 계산==>(2의n승 -1)
+{
+    int cnt = 0;
+    if (n == 1)
+        cnt++;
+    else
+    {
+        cnt += 2 * HanoiCnt(n - 1);
+        cnt++;
+    }
+    return cnt;
+}
+*/
 void Hanoi(int n, int st, int ds, int via)    //이동 경로 출력(갯수, 시작, 도착, 경유)
 {
     if(n==1)
