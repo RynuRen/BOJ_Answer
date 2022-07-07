@@ -16,7 +16,8 @@ int main(void)
     qsort(a, n, sizeof(a[0]), compare);    //qsort(정렬할배열, 요소개수, 요소크기, 비교함수)
     
     for(int i=0;i<n;i++)
-        printf("%d\n", a[i]);        
+        printf("%d\n", a[i]);
+    free(a);
     return 0;
 }
 int compare(const void *a, const void *b)
