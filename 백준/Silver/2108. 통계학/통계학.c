@@ -8,7 +8,7 @@ int main(void)
 {
     int n;
     double sum=0;        //산술평균을 소수점 반올림하기 위해 double형으로
-    int count[8001]={0,};
+    int count[8001]={0,};    //-4000~4000
     int* a=(int*)calloc(500000,sizeof(int));
     if(a==NULL){
         puts("Alloc Memory Error!!");
@@ -18,49 +18,39 @@ int main(void)
     for(int i=0;i<n;i++)
     {
         scanf("%d", &a[i]);
-        sum+=a[i];        //입력값의 합
-        if(a[i]>=0)        //입력값을 count배열에 카운트
-            count[a[i]]+=1;
-        else
-            count[8001+a[i]]+=1;    //음수가 입력되면 배열의 뒤에서 부터 카운트
+        sum+=a[i];              //입력값의 합
+        count[a[i]+4000]+=1;    //-4000이 인덱스 0에 입력되게 하여 -4000~4000까지의 수 카운트
     }
     
     merge_sort(a, 0, n-1);
     
     if(sum>=0)
-        printf("%d\n", (int)(sum/n+0.5));     //산술평균 출력(소수점 첫째자리 반올림)
+        printf("%d\n", (int)(sum/n+0.5));
     else
-        printf("%d\n", (int)(sum/n-0.5));
-    printf("%d\n", a[n/2]);    //중앙값 출력
-    printf("%d\n", mode_counter(count));            //최빈값 출력
-    printf("%d\n", a[n-1]-a[0]);    //범위 출력
+        printf("%d\n", (int)(sum/n-0.5));  //산술평균 출력(소수점 첫째자리 반올림)
+    printf("%d\n", a[n/2]);                //중앙값 출력
+    printf("%d\n", mode_counter(count));   //최빈값 출력
+    printf("%d\n", a[n-1]-a[0]);           //범위 출력
     free(a);
     return 0;
 }
 /*최빈값 확인*/
 int mode_counter(int count[])
 {
-    int mod, max=0, overlap=0;    
-    for(int i=0;i<8000;i++)
+    int mod=0, max=0, overlap=0;    
+    for(int i=0;i<8001;i++)
         if(max<count[i]){
-            max=count[i];        //0~4000까지는 양수 그대로 8000~4001까지는 음수
+            max=count[i];        //0~4000까지는 음수 8000~4001까지는 양수
             mod=i;
         }
     /*최빈값이 여러 개인지 체크*/
-    for(int i=4001;i<8001;i++)    //음수부터 체크
+    for(int i=0;i<8001;i++)
         if(max==count[i]){
             overlap++;
             if(overlap==2)
                 mod=i;
         }
-    for(int i=0;i<4001;i++)       //음수 체크 후 양수 체크
-        if(max==count[i]){
-            overlap++;
-            if(overlap==2)
-                mod=i;
-        }
-    if(mod>4000)
-        mod-=8001;    //배열의 인덱스가 4001을 넘어가면 음수이므로
+    mod-=4000;    //실제 입력값으로 복구
     return mod;
 }
 /*병합 정렬*/
