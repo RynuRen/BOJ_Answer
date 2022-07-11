@@ -8,7 +8,7 @@ int main(void)
     char ch[20000][51]={0,};
     scanf("%d", &n);
     for(int i=0;i<n;i++)
-        scanf("%s", &ch[i]);
+        scanf("%s", ch[i]);
     
     qsort(ch, n, 51, compare);
     
