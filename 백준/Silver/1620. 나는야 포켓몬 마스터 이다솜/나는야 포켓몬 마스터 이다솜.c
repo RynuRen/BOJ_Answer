@@ -15,13 +15,13 @@ int main(void)
     int n, m;
     scanf("%d %d", &n, &m);
     for(int i=1;i<=n;i++){
-        scanf("%s", &poke[i]);
+        scanf("%s", poke[i]);
         strcpy(tmp[i].name, poke[i]);
         tmp[i].no=i;
     }
     qsort(tmp, n+1, sizeof(Pokemon), compare);
     for(int i=0;i<m;i++)
-        scanf("%s", &quiz[i]);
+        scanf("%s", quiz[i]);
     
     for(int i=0;i<m;i++){
         if(quiz[i][0]>'0'&&quiz[i][0]<='9')       //입력받은 값이 숫자 범위라면
