@@ -50,3 +50,29 @@ int bin_ser_up(int tar, int end)
     }
     return start;
 }
+/*이분탐색이지만 선형탐색과 시간복잡도가 같아져서 의미가 없어진다
+int ser_bin(int tar, int end)
+{
+    int mid, cnt=0, start=0;
+    while(start<=end){
+        mid=(start+end)/2;
+        if(card[mid]==tar){
+            cnt++;
+            int midh=mid;
+            while(card[midh+1]==tar){  //찾은 값의 오른쪽으로 중복값이 몇개인지 확인
+                midh++;
+                cnt++;
+            }
+            while(card[mid-1]==tar){   //찾은 값의 왼쪽으로 중복값이 몇개인지 확인
+                mid--;
+                cnt++;
+            }
+            return cnt;
+        }
+        else if(card[mid]>tar)
+            end=mid-1;
+        else
+            start=mid+1;
+    }
+    return cnt;
+}*/
