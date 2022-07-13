@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>    //strlen, strstr, strncpy 함수
 int main(void)  //strstr(대상문자열,찾을문자열):
-{               //대상에 찾을 문자열이 존재유무 존재하면 해당 문자열 포인터, 없으면 NULL
+{               //대상에 찾을 문자열이 존재하면 해당 문자열 포인터, 없으면 NULL
 	int cnt = 0;
 	char ch[1001];
 	char tmp[1001];
