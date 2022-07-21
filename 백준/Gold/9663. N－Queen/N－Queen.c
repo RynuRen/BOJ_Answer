@@ -29,7 +29,7 @@ void queen(int q)        //받은 매개변수는 퀸을 둔 행
 }
 int promising(int q)
 {
-    for(int i=1;i<q;i++)    //이전 퀸(j,chess[j])들과 비교
+    for(int i=1;i<q;i++)    //놓을 퀸(q,chess[q])과 이전 퀸(i,chess[i])들과 비교
         //이전 퀸과 열 위치가 같음    //이전 퀸과 대각에 위치
         if(chess[i]==chess[q] || abs(q-i)==abs(chess[q]-chess[i]))
             return (0);
