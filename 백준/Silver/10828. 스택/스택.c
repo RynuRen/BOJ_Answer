@@ -1,4 +1,3 @@
-//백준 9012 실버4 괄호
 #include <stdio.h>
 #include <string.h> //strcmp 함수
 
@@ -8,9 +7,7 @@ int Size(void);
 int Empty(void);
 int Top(void);
 
-enum menu {push, pop, size, empty, top};
-
-int stack[10000];
+int stack[10000];   //최대명령 10000 전부 push일 경우
 int top_idx;
 
 int main(void)
@@ -19,43 +16,23 @@ int main(void)
     scanf("%d", &n);
     for(int i=0;i<n;i++){
         char order[6];
-        enum menu orders=0;
         scanf("%s", order);
-        //입력된 명령을 열거형으로 변환
-        if(!strcmp(order, "push\0")){
-            orders=push;
+        if(!strcmp(order, "push")){
+            int x;
+            scanf("%d\n", &x);
+            Push(x);
         }
-        else if(!strcmp(order, "pop\0")){
-            orders=pop;
+        else if(!strcmp(order, "pop")){
+            printf("%d\n", Pop());
         }
-        else if(!strcmp(order, "size\0")){
-            orders=size;
+        else if(!strcmp(order, "size")){
+            printf("%d\n", Size());
         }
-        else if(!strcmp(order, "empty\0")){
-            orders=empty;
+        else if(!strcmp(order, "empty")){
+            printf("%d\n", Empty());
         }
-        else if(!strcmp(order, "top\0")){
-            orders=top;
-        }
-        //열거형으로 명령 스위치
-        switch(orders){
-            case push:
-                int x;
-                scanf("%d\n", &x);
-                Push(x);
-                break;
-            case pop:
-                printf("%d\n", Pop());
-                break;
-            case size:
-                printf("%d\n", Size());
-                break;
-            case empty:
-                printf("%d\n", Empty());
-                break;
-            case top:
-                printf("%d\n", Top());
-                break;
+        else if(!strcmp(order, "top")){
+            printf("%d\n", Top());
         }
     }
     return 0;
