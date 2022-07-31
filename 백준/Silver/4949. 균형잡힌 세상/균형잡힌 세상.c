@@ -5,13 +5,13 @@ int top;
 
 void push(char);
 char pop(void);
-int isEmpty(void);
 int balance(char*);
 
 int main(void)
 {
     char str[101];
     while(1){
+        top=0;
         scanf("%[^\n]%*c", str);    //\n까지 읽어들이고 버퍼에서 \n은 제거
         if(str[0]=='.'){
             break;
@@ -33,22 +33,15 @@ char pop(void)
 {
     return stack[--top];
 }
-int isEmpty(void)
-{
-    return top==0;
-}
 int balance(char* str)
 {
     int result=1;
     for(int i=0;str[i];i++){
-        if(str[i]=='('){
-            push(str[i]);
-        }
-        else if(str[i]=='['){
+        if(str[i]=='(' || str[i]=='['){
             push(str[i]);
         }
         else if(str[i]==')'){
-            if(isEmpty()){
+            if(top==0){
                 result=0;
                 break;
             }
@@ -61,7 +54,7 @@ int balance(char* str)
             }
         }
         else if(str[i]==']'){
-            if(isEmpty()){
+            if(top==0){
                 result=0;
                 break;
             }
@@ -74,11 +67,8 @@ int balance(char* str)
             }
         }
     }
-    if(!isEmpty()){
+    if(top!=0){
         result=0;
-    }
-    while(!isEmpty()){
-        pop();
     }
     return result;
 }
