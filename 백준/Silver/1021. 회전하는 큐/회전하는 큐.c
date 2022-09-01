@@ -20,7 +20,7 @@ int main(void)
             cnt+=idx[i]-1;
         }
         else{
-            //오른쪽으로 큐를 (n-idx[i]) 만큼 이동
+            //오른쪽으로 큐를 (n+1-idx[i]) 만큼 이동
             for(int j=i+1;j<m;j++){
                 idx[j]=(idx[j]+((n+1)-idx[i])-1)%n;
                 if(idx[j]==0){
