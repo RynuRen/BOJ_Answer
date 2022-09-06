@@ -21,7 +21,7 @@ int GroupCk(char* a)
     {
         for(j=i+1;a[j]!='\0';j++)
         {
-            if(a[i]==a[j]&&j-i!=1&&a[i]!=a[j-1])     //같은 알파벳이 나왔는데 1칸 이상 떨어져 있고, 그 전 알파벳과 같지 않을 때.. aaabba 같이
+            if(a[i]==a[j]&&j-i!=1&&a[i]!=a[j-1])
                 return 1;
         }
     }

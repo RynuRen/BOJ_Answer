@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 int mod[1000001];    //mod[i]: i항까지의 누적합을 m으로 나눈 나머지
-int cnt[1000]; //cnt[i]: 나머지가 i인 mod의 갯수
+int cnt[1001]; //cnt[i]: 나머지가 i인 mod의 갯수
 
 int main(void)
 {

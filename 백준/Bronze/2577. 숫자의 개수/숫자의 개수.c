@@ -10,7 +10,7 @@ int main(void)
     {
         arr[i]=mult%10;
         if(mult==0)
-            arr[i]=-1;        //남은 arr에 쓰레기값이 들어가는 것을 방지
+            arr[i]=-1;
         mult/=10;
     }
     for(j=0;j<10;j++)
