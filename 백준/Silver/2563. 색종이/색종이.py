@@ -1,4 +1,5 @@
 paper = [[0 for _ in range(100)] for _ in range(100)]
+# paper = [[0] * 100 for _ in range(100)]
 
 result = 0
 num = int(input())
