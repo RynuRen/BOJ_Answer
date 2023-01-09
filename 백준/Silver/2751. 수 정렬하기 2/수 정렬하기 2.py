@@ -1,10 +1,1 @@
-import sys
-input = sys.stdin.readline
-
-num = []
-n = int(input())
-for i in range(n):
-    num.append(int(input()))
-num.sort()
-for i in range(n):
-    print(num[i])
+print(*sorted(map(int,[*open(0)][1:])), sep='\n')
