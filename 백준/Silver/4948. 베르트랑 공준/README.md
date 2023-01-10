@@ -1,10 +1,10 @@
-# [Silver III] 베르트랑 공준 - 4948 
+# [Silver II] 베르트랑 공준 - 4948 
 
 [문제 링크](https://www.acmicpc.net/problem/4948) 
 
 ### 성능 요약
 
-메모리: 2084 KB, 시간: 12 ms
+메모리: 32488 KB, 시간: 2432 ms
 
 ### 분류
 
