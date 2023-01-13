@@ -2,15 +2,12 @@ import sys
 input = sys.stdin.readline
 
 n = int(input())
-count = {}
+count = [0] * (10000+1)
 for _ in range(n):
     num = int(input())
-    if count.get(num):
-        count[num] += 1
-    else:
-        count[num] = 1
+    count[num] += 1
 
-for n in range(max(count.keys()) + 1):
-    while count.get(n) and count[n] != 0:
+for n in range(10000+1):
+    while count[n] != 0:
         print(n, end=' ')
         count[n] -= 1
