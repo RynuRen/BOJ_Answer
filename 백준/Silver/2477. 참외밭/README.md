@@ -1,10 +1,10 @@
-# [Silver III] 참외밭 - 2477 
+# [Silver II] 참외밭 - 2477 
 
 [문제 링크](https://www.acmicpc.net/problem/2477) 
 
 ### 성능 요약
 
-메모리: 30616 KB, 시간: 40 ms
+메모리: 30616 KB, 시간: 36 ms
 
 ### 분류
 
