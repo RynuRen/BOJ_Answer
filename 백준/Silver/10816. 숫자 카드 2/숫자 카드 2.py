@@ -8,5 +8,5 @@ N.sort()
 m = int(input())
 M = list(map(int, input().split()))
 
-for i in M:
-    print(bisect.bisect(N, i) - bisect.bisect_left(N, i), end=' ')
+for i in range(m):
+    print(bisect.bisect(N, M[i]) - bisect.bisect_left(N, M[i]), end=' ')
