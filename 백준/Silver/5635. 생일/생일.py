@@ -1,7 +1,7 @@
 n = int(input())
 att = []
 for _ in range(n):
-    std = list(input().split())
+    std = input().split()
     biday = list(map(int, std[1:]))
     att.append([std[0]] + biday)
 
