@@ -1,11 +1,11 @@
+from itertools import combinations
+
 n, m = map(int, input().split())
 card = list(map(int, input().split()))
 
 maxi = 0
-for i in range(n-2):
-    for j in range(i+1, n-1):
-        for k in range(j+1, n):
-            total = card[i] + card[j] + card[k]
-            if total <= m and total > maxi:
-                maxi = total
+for card3 in combinations(card, 3):
+    sum_card3 = sum(card3)
+    if maxi < sum_card3 <= m:
+        maxi = sum_card3
 print(maxi)
