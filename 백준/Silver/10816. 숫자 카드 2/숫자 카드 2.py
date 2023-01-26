@@ -1,12 +1,13 @@
-import sys, bisect
+from collections import Counter
+import sys
 input = sys.stdin.readline
 
-n = int(input())
-N = list(map(int, input().split()))
-N.sort()
+_ = input()
+N = [*map(int, input().split())]
+_ = input()
+M = [*map(int, input().split())]
 
-m = int(input())
-M = list(map(int, input().split()))
-
-for i in range(m):
-    print(bisect.bisect(N, M[i]) - bisect.bisect_left(N, M[i]), end=' ')
+cnt = Counter(N)
+for num in M:
+    rst = cnt.get(num)
+    print(0 if rst == None else rst, end=' ')
