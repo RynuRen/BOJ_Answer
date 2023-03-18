@@ -1,6 +1,6 @@
 m, n = map(int, input().split())
 
-pn = [True for _ in range(n+1)]
+pn = [True] * (n+1)
 
 for i in range(2, int(n**0.5)+1):
     if pn:
