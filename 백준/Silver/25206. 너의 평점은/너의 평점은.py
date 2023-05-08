@@ -4,7 +4,7 @@ cnt = 0
 for i in range(20):
     _, h, g = input().split()
     if g != "P":
-        total = total + (float(h) * grade[g])
+        total += float(h) * grade[g]
         cnt += float(h)
 result = total / cnt
 print(result)
