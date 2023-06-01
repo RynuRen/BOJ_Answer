@@ -1,8 +1,8 @@
 while True:
     sides = list(map(int, input().split()))
-    if 0 in sides:
+    if sides[0] == 0:
         break
-    if max(sides) >= sum(sides) - max(sides):
+    if 2 * max(sides) >= sum(sides):
         print('Invalid')
     else:
         x = len(set(sides))
