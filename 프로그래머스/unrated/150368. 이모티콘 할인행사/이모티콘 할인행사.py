@@ -21,7 +21,6 @@ def solution(users, emoticons):
         for k in dis:
             check[depth] = k
             backt(depth+1)
-            check[depth] = 0
     backt(0)
     answer.sort(key=lambda x:(x[0], x[1]))
     return answer[-1]
