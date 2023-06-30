@@ -1,9 +1,7 @@
 def solution(n):
-    binary = format(n, 'b')
-    one = binary.count('1')
-    tmp = n
+    one = format(n, 'b').count('1')
     while True:
-        tmp += 1
-        if format(tmp, 'b').count('1') == one:
-            return tmp
-    return 0
+        n += 1
+        if format(n, 'b').count('1') == one:
+            break
+    return n
