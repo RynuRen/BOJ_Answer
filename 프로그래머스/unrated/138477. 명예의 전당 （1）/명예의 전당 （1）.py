@@ -2,11 +2,9 @@ def solution(k, score):
     answer = []
     honor = []
     for s in score:
-        if len(honor) == k:
-            if honor[0] < s:
-                honor[0] = s
-        else:
-            honor.append(s)
-        honor.sort()
-        answer.append(honor[0])
+        honor.append(s)
+        honor.sort(reverse=True)
+        if len(honor) > k:
+            honor.pop()
+        answer.append(honor[-1])
     return answer
