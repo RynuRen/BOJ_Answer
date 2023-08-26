@@ -1,8 +1,5 @@
 def solution(strArr):
     dic = {}
     for s in strArr:
-        if len(s) in dic:
-            dic[len(s)] += 1
-        else:
-            dic[len(s)] = 1
+        dic[len(s)] = dic.get(len(s), 0) + 1
     return max(dic.values())
