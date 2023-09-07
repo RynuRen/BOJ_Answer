@@ -1,6 +1,6 @@
 import re
+
 def solution(new_id):
-    answer = ''
     fst = new_id.lower()
     snd = re.sub('[^a-z0-9-_.]', '', fst)
     trd = re.sub('\.+', '.', snd)
