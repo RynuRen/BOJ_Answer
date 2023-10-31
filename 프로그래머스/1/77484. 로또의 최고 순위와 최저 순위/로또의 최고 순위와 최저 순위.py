@@ -1,5 +1,5 @@
 def solution(lottos, win_nums):
+    rank = [6, 6, 5, 4, 3, 2 ,1]
     wild = lottos.count(0)
     inter = len(set(lottos) & set(win_nums))
-    high = wild + inter
-    return [7 - (1 if high == 0 else high), 7 - (1 if inter == 0 else inter)]
+    return [rank[wild + inter], rank[inter]]
