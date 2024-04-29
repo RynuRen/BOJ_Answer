@@ -7,9 +7,7 @@ def calc(i):
         return 5 * calc(i-1) + 1
 
 def solution(word):
-    vowels = ["A", "E", "I", "O", "U"]
     answer = 0
     for i, c in enumerate(word):
-        answer += vowels.index(c) * calc(3 - i) + 1
-        print(answer)
+        answer += "AEIOU".index(c) * calc(3 - i) + 1
     return answer
