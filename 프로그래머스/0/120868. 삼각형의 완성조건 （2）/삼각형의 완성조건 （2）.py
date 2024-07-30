@@ -1,2 +1,2 @@
 def solution(sides):
-    return len(range(max(sides) - min(sides) + 1, sum(sides)))
+    return sum(sides) - (max(sides) - min(sides) + 1)
